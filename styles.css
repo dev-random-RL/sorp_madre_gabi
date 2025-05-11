@@ -1,0 +1,155 @@
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #E6E6FA; /* Lavanda claro como fondo suave */
+    color: #4b0082;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 80px; /* Evita que el contenido quede oculto debajo del header */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+    width: 100%; /* Asegura que el contenedor se adapte al ancho de la pantalla */
+}
+
+header {
+    position: fixed; /* Fijamos el header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    z-index: 10; /* Para que se quede por encima de otros contenidos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2.5em;
+    color: #FF69B4; /* Rosa fuerte */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: slideFromTop 1.5s ease-in-out;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: #8A2BE2; /* Violeta */
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.image-container {
+    margin-top: 120px; /* Espacio para que no se superponga con el header */
+    margin-bottom: 30px;
+    animation: fadeInImage 2s ease-in-out;
+}
+
+.photo {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+    animation: zoomIn 2s forwards;
+}
+
+.message {
+    font-size: 1.2em;
+    color: #4B0082; /* Violeta oscuro */
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.content {
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #F5FFFA;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em; /* Título más pequeño en dispositivos móviles */
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .photo {
+        width: 90%; /* Foto más grande en pantallas pequeñas */
+    }
+
+    .message {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.7em; /* Título aún más pequeño en móviles muy pequeños */
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .content {
+        padding: 15px; /* Menos padding en pantallas pequeñas */
+    }
+}
